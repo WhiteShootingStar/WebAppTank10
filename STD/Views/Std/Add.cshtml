@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Std>
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add new Student</h2>
+
+<form class="form-control" action="AddToDb" method="post">
+    <input class="input-field" type="text" name="FirstName" id="FirstName" />
+
+    <input class="input-field" type="text" name="LastName" id="LastName" />
+
+    <select class="select-dropdown"  name ="Studies" id="Studies">
+        @foreach (var item in (IEnumerable<string>)ViewBag.list)
+        {
+          <option value=@item>@item</option>
+        }
+    </select>
+
+    <input class="input" type="submit" value="Create" />
+</form>
+
+
